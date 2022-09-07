@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/pages/homePage.dart';
 
 class LayoutPage extends StatefulWidget {
   const LayoutPage({Key? key}) : super(key: key);
@@ -29,24 +30,30 @@ class _LayoutPageState extends State<LayoutPage> {
         child: SizedBox(
           height: 100,
           width: 100,
-          child: Material(
-              child: Center(
-                child: Column(
-                  children: [
-                    Expanded(
-                        child: Tooltip(
-                          message: "welcome to insta house",
-                          child: Image.asset(
-                            "Assets/images/insta.png",
-                          ),
-                        )),
-                  ],
+          child: InkWell(onTap:() {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return HomePage();
+            },));
+          } ,
+            child: Material(
+                child: Center(
+                  child: Column(
+                    children: [
+                      Expanded(
+                          child: Tooltip(
+                            message: "welcome to insta house",
+                            child: Image.asset(
+                              "Assets/images/insta.png",
+                            ),
+                          )),
+                    ],
+                  ),
                 ),
-              ),
-              color: Colors.black.withOpacity(0.1),
-              borderRadius: BorderRadius.all(Radius.circular(30)),
-              elevation: 10,
-              shadowColor: Colors.red),
+                color: Colors.black.withOpacity(0.1),
+                borderRadius: BorderRadius.all(Radius.circular(30)),
+                elevation: 10,
+                shadowColor: Colors.red),
+          ),
         ),
       ),
       bottomNavigationBar: Container(

@@ -8,6 +8,14 @@ void main() {
     theme: ThemeData(
       primarySwatch: Colors.blue,
     ),
-    home: LayoutPage(),
+    home: MyApp(),
   ));
+}
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutPage();
+  }
 }
